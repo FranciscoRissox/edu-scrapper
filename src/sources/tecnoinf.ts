@@ -2,6 +2,7 @@ import { chromium } from '@playwright/test';
 import { Database } from '../db.ts';
 
 export default async () => {
+    console.log('   -> Running tecnoinf')
     const browser = await chromium.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -11,5 +12,6 @@ export default async () => {
     if (lastData?.description !== main) {
         Database.insertData(main, 'tecnoinf');
     }
+    console.log('   -> Tecnoinf finished')
     await browser.close();
 }
