@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
-      cron-job:
-        specifier: ^1.0.3
-        version: 1.0.3
       express:
         specifier: ^5.1.0
         version: 5.1.0
+      node-cron:
+        specifier: ^4.2.1
+        version: 4.2.1
     devDependencies:
       '@playwright/test':
         specifier: ^1.54.1
@@ -67,9 +67,6 @@ packages:
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
-
-  cron-job@1.0.3:
-    resolution: {integrity: sha512-I+ZfyIYTfc6An6z2upIt/KhICQ/k+vi/BowTwtUYrLldDwcz8wKYhUeMGSQnBL51TcCG3NIeG6iVgXtg7qS4iw==}
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -202,6 +199,10 @@ packages:
   negotiator@1.0.0:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
+
+  node-cron@4.2.1:
+    resolution: {integrity: sha512-lgimEHPE/QDgFlywTd8yTR61ptugX3Qer29efeyWw2rv259HtGBNn1vZVmp8lB9uo9wC0t/AT4iGqXxia+CJFg==}
+    engines: {node: '>=6.0.0'}
 
   object-inspect@1.13.4:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
@@ -366,8 +367,6 @@ snapshots:
 
   cookie@0.7.2: {}
 
-  cron-job@1.0.3: {}
-
   debug@4.4.1:
     dependencies:
       ms: 2.1.3
@@ -507,6 +506,8 @@ snapshots:
   ms@2.1.3: {}
 
   negotiator@1.0.0: {}
+
+  node-cron@4.2.1: {}
 
   object-inspect@1.13.4: {}
 

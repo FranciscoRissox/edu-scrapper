@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-strip-types index.ts"
+    "start": "node --experimental-strip-types src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,7 @@
     "@types/node": "^24.1.0"
   },
   "dependencies": {
-    "cron-job": "^1.0.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "node-cron": "^4.2.1"
   }
 }
