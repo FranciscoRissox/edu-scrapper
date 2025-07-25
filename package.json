@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-strip-types src/index.ts"
+    "start": "node --experimental-strip-types --env-file=.env src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +12,12 @@
   "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.54.1",
-    "@types/node": "^24.1.0"
+    "@types/node": "^24.1.0",
+    "@types/node-telegram-bot-api": "^0.64.9"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "node-cron": "^4.2.1"
+    "node-cron": "^4.2.1",
+    "node-telegram-bot-api": "^0.66.0"
   }
 }
