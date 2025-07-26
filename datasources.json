@@ -1,0 +1,8 @@
+{
+    "TECNOINF": {
+        "name": "Técnologo en Informática - MVD",
+        "url": "https://www.fing.edu.uy/tecnoinf/mvd/novedades.html",
+        "selector": "body > div.main > div.description",
+        "chatId": "5627238398"
+    }
+}

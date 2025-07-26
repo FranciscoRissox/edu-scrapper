@@ -1,15 +1,24 @@
 import nodeCron from 'node-cron';
-import Tecnoinf from "./sources/tecnoinf.ts";
+import { doScrap } from "./scrap.ts";
+import fs from 'fs';
+import { Database } from "./db.ts";
 
+Database.initDb();
+
+const loadJson = () => {
+    return JSON.parse(fs.readFileSync('datasources.json', 'utf-8'));
+}
 
 export const Scraper = async () => {
-
-    try {
-        await Tecnoinf();
-    } catch (error) {
-        console.error('Error when scrapping tecnoinf', error);
+    const datasources = loadJson();
+    const sources = Object.keys(datasources);
+    for(const source of sources){
+        try {
+            await doScrap(datasources[source], source);
+        } catch (error) {
+            console.error(`Error when scrapping ${source}`, error);
+        }
     }
-    
 }
 
 // Run every 30min
@@ -18,5 +27,7 @@ nodeCron.schedule('*/30 * * * *', async () => {
     await Scraper();
     console.log('---Cron job finished---');
 });
+
+Scraper();
 
 
