@@ -1,6 +1,6 @@
 import { DatabaseSync } from 'node:sqlite';
 
-const db = new DatabaseSync('../db.sqlite');
+const db = new DatabaseSync('./db.sqlite');
 
 export type Data = {
     id: number;

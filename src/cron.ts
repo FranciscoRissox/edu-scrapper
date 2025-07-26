@@ -1,9 +1,6 @@
 import nodeCron from 'node-cron';
 import { doScrap } from "./scrap.ts";
 import fs from 'fs';
-import { Database } from "./db.ts";
-
-Database.initDb();
 
 const loadJson = () => {
     return JSON.parse(fs.readFileSync('datasources.json', 'utf-8'));
@@ -21,13 +18,13 @@ export const Scraper = async () => {
     }
 }
 
-// Run every 30min
-nodeCron.schedule('*/30 * * * *', async () => {
-    console.log('---Running cron job---');
-    await Scraper();
-    console.log('---Cron job finished---');
-});
-
-Scraper();
+export const initCron = () => {
+    nodeCron.schedule('*/30 * * * *', async () => {
+        console.log('---Running cron job---');
+        await Scraper();
+        console.log('---Cron job finished---');
+    });
+    Scraper();
+}
 
 
